@@ -1,0 +1,73 @@
+<div class="liveWrapper">
+	<div class="playButton2">
+		<button type="button" ng-click="playReplay()" class="btn-style1" ng-disabled="buttonPlay" >Play Replay</button>
+		<div class="spinner">
+			<spinner name="replaySpinner" img-src="img\spinner.gif"></spinner>
+		</div>
+	</div>
+	<div class = "replayOptions">
+
+		<div class="row">
+			<div class="col-xs-12">
+				<label>Slow Motion</label>
+				<br>
+				<div class="btn-group" data-toggle="buttons">
+					<label class="btn active">
+						<input type="radio" name="frames" value="1.0" data-ng-model="formData.frames" ng-change="change()"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> 1x</span>
+					</label>
+					<label class="btn">
+						<input type="radio" name="frames" value="2.0" data-ng-model="formData.frames"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> 2x</span>
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12">
+				<label>Audio</label>
+				<br>
+				<div class="btn-group" data-toggle="buttons">
+					<label class="btn active">
+						<input type="radio" name="audio" value="chariots" ng-model="formData.audio"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Chariots</span>
+					</label>
+					<label class="btn">
+						<input type="radio" name="audio" value="benny" ng-model="formData.audio"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Benny Hill</span>
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12">
+				<label>Duration</label>
+				<br>
+				<div class="btn-group" data-toggle="buttons">
+					<label class="btn active">
+						<input type="radio" name="duration" value="2" ng-model="formData.duration"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Short</span>
+					</label>
+					<label class="btn">
+						<input type="radio" name="duration" value="3" ng-model="formData.duration"><i class="fa fa-circle-o fa-2x"></i><i class="fa fa-check-circle-o fa-2x"></i><span> Long</span>
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<span class="playButton">
+			<button type="button" ng-click="playReplay()" class="btn-style1" ng-disabled="buttonPlay" >Play Replay</button>
+			<div class="spinner">
+				<spinner name="replaySpinner" img-src="img\spinner.gif"></spinner>
+			</div>
+		</span>
+		<div>
+			<br>
+		</div>
+	</div>
+
+	<div class = "videoContainer">
+<!-- 		<video width="75%" height="75%" controls>
+			<source src="Demofilm.webm" type="video/webm" />
+			<source src="video/love.mp4" type="video/mp4">
+			</video> -->
+		<iframe src="http://192.168.178.138:8765/picture/1/frame/" width="100%" height="100%" ng-hide="hideVideo"></iframe>
+	</div>
+</div>

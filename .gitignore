@@ -1,0 +1,13 @@
+/html/config/config.js
+/django/myconfig.py
+/html/video/
+*db.sqlite3
+*__pycache__/
+*.egg-info
+*.pot
+*.py[co]
+__pycache__
+*.log
+*.pot
+django/scripts/myconfig.py
+django/scripts/KickCamService.sh

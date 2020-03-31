@@ -1,0 +1,21 @@
+
+	<div class="replayWrapper">
+<!-- 		<video controls  autoplay fullscreen muted width="100%" height="100%" loop>
+			<source src="video/currentReplay.mp4" type="video/mp4" >
+		</video> -->
+
+		<video src = 'http://192.168.178.116/KickCam/html/video/currentReplay/currentReplay.mp4'controls autoplay fullscreen width="100%"></video>
+
+		<!-- 		<audio  preload="none" autoplay muted>
+			  <source type="audio/mp3" src="{{selectedSongPath}}"/>
+			</audio> -->
+		<!-- 		<form method="get" action="video/currentReplay.mp4">
+				<button type="button" class="btn btn-primary btn-lg">Save Replay</button>
+			</form> -->
+		<div class = "downloadOptions">
+			<a  ng-href="{{downloadURL}}{{videoPath}}" download>Download Replay</a>
+		</div>
+
+	</div>
+
+	

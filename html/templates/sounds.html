@@ -1,0 +1,19 @@
+<div ng-controller="SoundController">
+	<nav class="navbar navbar-inverse" role="navigation" id="submenu" >
+		<div class="flex-container-center">
+		    <ul class="nav navbar-nav">
+		      <li class="active"><a href='' ng-click="changeTemplate(0)">Werner</a></li>
+		      <li class="nav__item"><a href='' ng-click="changeTemplate(1)">Fussball</a></li>
+		      <li class="nav__item"><a href='' ng-click="changeTemplate(2)">Fun</a></li>
+		      <li class="nav__item"><a href='' ng-click="changeTemplate(3)">Songs</a></li>
+		    </ul>
+		</div>
+	</nav>
+	<div class="container">
+		<ng-include src="template.url"></ng-include>
+	</div>
+</div>
+
+<script>
+
+</script>

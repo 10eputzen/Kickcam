@@ -1,0 +1,5 @@
+#!/bin/bash
+# My first script
+echo "Start Recording ..."
+raspivid -o myvid.h264 -t 6000 -w 1280 -h 720
+echo "Recording Finished."
