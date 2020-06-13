@@ -30,8 +30,8 @@ else:
 
 # Directly after the import statement
 
-#Start Motioneye:
-sudo -u pi meyectl startserver -b -c /home/pi/motioneye/motioneye.conf
+#Motioneye:
+https://wiki.instar.de/Erweitert/IOBroker_auf_Raspberry_Pi/motionEye/
 
 sudo systemctl restart motioneye
 sudo systemctl stop motioneye.service

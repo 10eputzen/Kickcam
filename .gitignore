@@ -11,3 +11,4 @@ __pycache__
 *.pot
 django/scripts/myconfig.py
 django/scripts/KickCamService.sh
+kickcam.code-workspace
