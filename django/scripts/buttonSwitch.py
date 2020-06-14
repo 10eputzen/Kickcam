@@ -46,6 +46,5 @@ while True:
 		time.sleep(0.3)
 	except KeyboardInterrupt:
 		GPIO.cleanup()       # clean up GPIO on CTRL+C exit
-		raise
 	#GPIO.cleanup()           # clean up GPIO on normal exit
 
