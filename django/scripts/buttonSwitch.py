@@ -45,6 +45,7 @@ while True:
 		push(url)
 		time.sleep(0.3)
 	except KeyboardInterrupt:
-	        GPIO.cleanup()       # clean up GPIO on CTRL+C exit
+		GPIO.cleanup()       # clean up GPIO on CTRL+C exit
+		raise
 	#GPIO.cleanup()           # clean up GPIO on normal exit
 
