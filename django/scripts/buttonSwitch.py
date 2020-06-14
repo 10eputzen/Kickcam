@@ -21,7 +21,7 @@ data = '''{
 		},
 	},
 }'''
-def push():
+def push(url):
 	response = requests.post(url, data=data)
 	print (response.content.decode('utf-8').splitlines())
 	return True
@@ -42,7 +42,7 @@ while True:
 		GPIO.wait_for_edge(23, GPIO.RISING)
 		print ("\nButton Press detected. Firing POST Call to:\n")
 		print(url)
-		push()
+		push(url)
 		time.sleep(0.3)
 	except KeyboardInterrupt:
 		GPIO.cleanup()       # clean up GPIO on CTRL+C exit
