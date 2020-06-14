@@ -29,7 +29,6 @@ def push(message):
 
 GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
-print ("Make sure the Websocket is running\n")
 print ("Waiting for Button Input...")
 # now the program will do nothing until the signal on port 23
 # starts to fall towards zero. This is why we used the pullup
@@ -41,7 +40,7 @@ print ("Waiting for Button Input...")
 while True:
 	try:
 		GPIO.wait_for_edge(23, GPIO.RISING)
-		print ("\nButton Press detected. Firing Websocket Call to:\n")
+		print ("\nButton Press detected. Firing POST Call to:\n")
 		print(url)
 		push(url)
 		time.sleep(0.3)
