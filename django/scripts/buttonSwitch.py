@@ -42,7 +42,7 @@ while True:
 		GPIO.wait_for_edge(23, GPIO.RISING)
 		print ("\nButton Press detected. Firing POST Call to:\n")
 		print(url)
-		push(url)
+		push()
 		time.sleep(0.3)
 	except KeyboardInterrupt:
 		GPIO.cleanup()       # clean up GPIO on CTRL+C exit
