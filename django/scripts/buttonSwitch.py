@@ -4,22 +4,33 @@
 import RPi.GPIO as GPIO
 import time
 import urllib2
-from myconfig import *
+#from myconfig import *
+import requests
 GPIO.setmode(GPIO.BCM)
 
 code = '666'
-url = 'http://'+websocketUrl+':'+websocketPort+'/push?data='+code
+url = 'https://firestore.googleapis.com/v1/projects/kickcam-57681/databases/(default)/documents/buttonClicks'
 # GPIO 23 set up as input. It is pulled up to stop false signals
 
 def push(message):
-	url_response = urllib2.urlopen(message)
+	data = '''{
+      "fields": {
+        "time": {
+          "timestampValue": "2020-06-14T10:00:00Z"
+        },
+      },
+      "createTime": "2020-06-14T10:18:46.399725Z",
+      "updateTime": "2020-06-14T10:24:39.309097Z"
+	}'''
+	response = requests.post(url, data=data)
+	print (response)
 	return True
 #
 
 GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
-print "Make sure the Websocket is running\n"
-print "Waiting for Button Input..."
+print ("Make sure the Websocket is running\n")
+print ("Waiting for Button Input...")
 # now the program will do nothing until the signal on port 23
 # starts to fall towards zero. This is why we used the pullup
 # to keep the signal high and prevent a false interrupt
@@ -30,7 +41,7 @@ print "Waiting for Button Input..."
 while True:
 	try:
 		GPIO.wait_for_edge(23, GPIO.RISING)
-		print "\nButton Press detected. Firing Websocket Call to:\n"
+		print ("\nButton Press detected. Firing Websocket Call to:\n")
 		print(url)
 		push(url)
 		time.sleep(0.3)
