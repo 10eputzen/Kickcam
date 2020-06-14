@@ -4,6 +4,7 @@
 import RPi.GPIO as GPIO
 import time
 import urllib2
+from datetime import datetime
 #from myconfig import *
 import requests
 GPIO.setmode(GPIO.BCM)
@@ -11,16 +12,15 @@ GPIO.setmode(GPIO.BCM)
 code = '666'
 url = 'https://firestore.googleapis.com/v1/projects/kickcam-57681/databases/(default)/documents/buttonClicks'
 # GPIO 23 set up as input. It is pulled up to stop false signals
-
+dateTimeObj = datetime.now()
+timestampStr = dateTimeObj.strftime("%d-%b-%Y (%H:%M:%S.%f)")
 def push(message):
 	data = '''{
       "fields": {
         "time": {
-          "timestampValue": "2020-06-14T10:00:00Z"
+          "timestampValue":'''+ timestampStr +'''
         },
       },
-      "createTime": "2020-06-14T10:18:46.399725Z",
-      "updateTime": "2020-06-14T10:24:39.309097Z"
 	}'''
 	response = requests.post(url, data=data)
 	print (response)
